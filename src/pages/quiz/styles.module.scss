@@ -38,28 +38,4 @@ justify-content: center;
     display: flex;
     justify-content: space-between;
     font-family: "Gill Sans Extrabold", sans-serif;
-}  
-
-
-.buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-}   
-.buttons button{
-        cursor: pointer;
-        padding: 12px 20px;
-        font-size: 16px;
-        border: none;
-        border-radius: 6px;
-        background-color: #3498db;
-        color: #fff;
-        text-transform: uppercase;
-        font-weight: bold;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease;
-        cursor: pointer;
-        outline: none;
-        margin: 5px;
-}
+}    

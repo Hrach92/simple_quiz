@@ -7,6 +7,7 @@ import React from "react";
 const Complete = (): JSX.Element => {
   const { open, setToggle } = useBoolean();
   const { quests, division } = useQuiz();
+
   return (
     <div className={styles.container}>
       <span className={styles.title}>
@@ -24,7 +25,7 @@ const Complete = (): JSX.Element => {
         <div className={styles.questions}>
           {quests.map((value) => {
             return (
-              <React.Fragment>
+              <React.Fragment key={value.number}>
                 <Item completedQuestion={value} />
               </React.Fragment>
             );

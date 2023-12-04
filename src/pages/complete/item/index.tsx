@@ -25,8 +25,8 @@ const Item = ({ completedQuestion }: ItemTypes): JSX.Element => {
           <div
             className={cn(
               styles.answer,
-              answered && styles.answered,
-              isRight && styles.right
+              `${isRight ? styles.right : ""}`,
+              `${answered ? styles.answered : ""}`
             )}
           >
             {text}

@@ -1,12 +1,11 @@
 import { useCallback, useMemo, useState } from "react";
 import styles from "./styles.module.scss";
 import useQuiz from "hooks/useQuiz";
-import { Link } from "react-router-dom";
+import Buttons from "./buttons";
 
 const Quiz = (): React.JSX.Element => {
   const { quests, setQuests } = useQuiz();
   const [page, setPage] = useState(1);
-  console.log(quests);
 
   const prevPage = useCallback(() => {
     setPage((prev) => prev - 1);
@@ -55,20 +54,12 @@ const Quiz = (): React.JSX.Element => {
               </label>
             );
           })}
-          <div className={styles.buttons}>
-            <button onClick={prevPage} disabled={page === 1}>
-              prev
-            </button>
-            {page === quests.length && (
-              <Link to="/complete">
-                <button>Complete</button>
-              </Link>
-            )}
-
-            <button onClick={nextPage} disabled={page === 10}>
-              next
-            </button>
-          </div>
+          <Buttons
+            nextPage={nextPage}
+            prevPage={prevPage}
+            quests={quests}
+            page={page}
+          />
         </div>
       </div>
     </div>
