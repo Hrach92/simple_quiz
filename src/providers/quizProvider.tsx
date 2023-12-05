@@ -9,9 +9,7 @@ export const QuizContext = createContext({
 
 const QuizProvider = ({ children }: { children: React.ReactNode }) => {
   const [quests, setQuests] = useState<QuestionType[]>(questions);
-  /*   useEffect(() => {
-    console.log("work");
-  }, [setQuests]); */
+
   const value = useMemo(() => {
     return { quests, setQuests };
   }, [quests]);
